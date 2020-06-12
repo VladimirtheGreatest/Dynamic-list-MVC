@@ -9,11 +9,15 @@
         </td>
         <td>
             @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
         </td>
         <td>
-            @Html.EditorFor(model => model.Age)
-            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.DateOfBirth)
+            @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </td>
         <td>
             @Html.EditorFor(model => model.Remove)

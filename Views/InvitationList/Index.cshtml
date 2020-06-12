@@ -1,0 +1,46 @@
+@* Goes in Views\PersonList *@
+@using EditableListMvc.Models
+@model IEnumerable<Person>
+
+@{ ViewBag.Title = "Invitations Bulk List"; }
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Index", "InvitationList", FormMethod.Post))
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remove)
+            </th>
+        </tr>
+    </thead>
+    <tbody id="childtable">
+        @Html.EditorFor(model => Model)
+    </tbody>
+</table>
+                <p>
+                    <input name="command" type="submit" value="Add Item" />
+                    <input name="command" type="submit" value="Remove Selected" />
+                </p>
+                                <p>
+                                    @Html.ValidationSummary()
+                                    <input name="command" type="submit" value="Submit" />
+                                </p>}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script> 
